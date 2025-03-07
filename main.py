@@ -49,9 +49,6 @@ def filter_programs(
         match = pattern.search(program.uninstall_string)
         if match:
             if not os.path.exists(path := match.group()):
-                if "bluestacks" in program.display_name.lower():
-                    print(program.uninstall_string)
-                    print(match.group())
                 invalid_unins.append(
                     InstalledProgram(
                         program.display_name,
